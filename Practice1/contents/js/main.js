@@ -39,6 +39,10 @@ function submitAction(url) {
       // スピナー非表示
       $("#spinner").addClass("invisible");
     } else {
+      // 以下ブラウザバッグ時に残らないように消去
+      $("#form")[0].reset();
+      $("#table-data").val("");
+      $("#spinner").addClass("invisible");
       window.location.href = url;
     }
   }, 1000);
