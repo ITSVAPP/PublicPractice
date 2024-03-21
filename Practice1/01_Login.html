@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Original CSS -->
+    <link href="./contents/css/main.css" rel="stylesheet" type="text/css" />
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <!-- Orignal JavaScript -->
+    <script src="./contents/js/main.js"></script>
+    <title>ログイン画面</title>
+  </head>
+  <body>
+    <header>
+      <h1>ログイン画面</h1>
+    </header>
+    <!-- コンテンツ -->
+    <div class="login">
+      <div class="loginHeader">
+        <img class="icon" src="./contents/icon/login.svg" />&nbsp;&nbsp;LOGIN
+      </div>
+      <div class="loginContents">
+        <form action="02_Succsess.html" id="form" method="post">
+          <fieldset>
+            <div class="form-group">
+              <label class="font-weight-bold">社員ID</label>
+              <br />
+              <input
+                type="text"
+                class="form-control enter"
+                name="id"
+                required
+                data="login"
+                valuemissing="社員IDを入力して下さい"
+                maxlength="6"
+                tabindex="10"
+                autofocus
+                autocomplete="off"
+              />
+            </div>
+            <div class="form-group">
+              <label class="font-weight-bold">パスワード</label>
+              <br />
+              <input
+                type="password"
+                class="form-control enter"
+                name="pass"
+                required
+                data="login"
+                valuemissing="パスワードを入力してください"
+                maxlength="15"
+                tabindex="20"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-outline-secondary btn-lg btn-block"
+              onclick="if(check('form')){ submitAction('02_Succsess.html');}"
+              id="login"
+              tabindex="30"
+            >
+              ログイン
+            </button>
+          </fieldset>
+        </form>
+        <div class="row invisible" id="spinner">
+          <div class="spinner-grow text-secondary m-auto" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        <div class="alert alert-danger" role="alert" id="alert">
+          不正なログイン情報です。
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <footer>
+      <address>&copy; infotec service, Inc.</address>
+    </footer>
+    <div class="setting-btn first"><span></span><span></span><span></span></div>
+    <div id="settting">
+      <div>
+        <label for="table-data" class="form-label">データベースの設定値</label>
+        <textarea
+          class="form-control"
+          id="table-data"
+          rows="10"
+          autocomplete="off"
+          placeholder="Id,Password 以下例&#13;sample,sample&#13;test,test"
+        ></textarea>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+﻿@charset "utf-8";
+
+body {
+  font: 14px/1.6 "Hiragino Kaku Gothic Pro", Osaka, "メイリオ",
+    "ＭＳ Ｐゴシック", "MS PGothic", Verdana, Arial, sans-serif;
+  margin: 0;
+  color: #313131;
+}
+
+/* ログイン画面用 START */
+.login {
+  max-width: 300px;
+  margin: auto;
+  border: solid 1px dimgray;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.loginHeader {
+  background: silver;
+  border-radius: 10px 10px 0px 0px;
+  padding: 15px;
+  font-size: 25px;
+}
+
+.loginContents {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+fieldset {
+  padding: 15px;
+  margin-bottom: 0;
+}
+/* ログイン画面用 END */
+
+/*****共通*****/
+/* アイコン */
+.icon {
+  height: 30px;
+  width: 30px;
+}
+
+/*****HEADER*****/
+header {
+  display: block;
+  width: 60%;
+  margin-left: 20%;
+  overflow: hidden;
+}
+header h1 {
+  font-size: 120%; /*フォントサイズの調整*/
+  color: #313131; /*文字色の変更*/
+  padding-top: 10px; /*文字上部に余白*/
+  padding-bottom: 10px; /*文字下部に余白*/
+  padding-left: 20px; /*文字左側に余白*/
+  padding-right: 20px; /*文字右側に余白*/
+  margin-top: 20px; /*ロゴ上部に余白*/
+  margin-bottom: 20px; /*ロゴ下部に余白*/
+  border: 1px solid #313131; /*文字の周りに線を描く*/
+  border-radius: 5px; /*線の角に丸みを付ける*/
+  letter-spacing: 3px; /*文字と文字の間隔をあける*/
+  font-weight: 400; /*文字の太さの変更*/
+  float: left; /*左側にfloat*/
+}
+
+footer {
+  font-size: 80%; /*フォントサイズの指定*/
+  width: 100%; /*横幅の指定*/
+  text-align: center; /*文字の中央寄せ*/
+  padding-top: 10px; /*文字上部の余白指定*/
+  padding-bottom: 10px; /*文字下部の余白指定*/
+  background-color: #313131; /*背景色の指定*/
+}
+
+footer address {
+  color: #fff; /*文字色の指定*/
+  letter-spacing: 5px; /*文字と文字の間隔をあける*/
+  font-style: normal; /*文字の斜体を取り消す*/
+}
+
+/* 設定項目 */
+#settting {
+  display: none;
+}
+
+.setting-btn.active + #settting {
+  position: fixed; /* 固定位置の指定 */
+  display: block;
+  right: 5px; /* 右端からの距離 */
+  top: 0; /* 画面の上端から中央に配置したい場合 */
+  padding-top: 75px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影の追加（オプショナル） */
+
+  > div {
+    text-align: center;
+    color: rgb(135, 135, 135);
+    > textarea {
+      font-size: 1em;
+    }
+  }
+}
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.setting-btn {
+  z-index: 1;
+  position: fixed; /*ボタン内側の基点となるためrelativeを指定*/
+  right: 20px; /* 右端からの距離 */
+  top: 20px; /* 画面の上端から中央に配置したい場合 */
+  background: silver;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影の追加（オプショナル） */
+
+  &.first {
+    background: #d54884;
+  }
+}
+
+/*ボタン内側*/
+.setting-btn span {
+  display: inline-block;
+  transition: all 0.4s; /*アニメーションの設定*/
+  position: absolute;
+  left: 14px;
+  height: 2px;
+  border-radius: 5px;
+  background: #fff;
+  width: 45%;
+}
+
+.setting-btn span:nth-of-type(1) {
+  top: 13px;
+}
+
+.setting-btn span:nth-of-type(2) {
+  top: 19px;
+}
+
+.setting-btn span:nth-of-type(3) {
+  top: 25px;
+}
+
+.setting-btn span:nth-of-type(3)::after {
+  content: "Set"; /*3つ目の要素のafterにMenu表示を指定*/
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  color: #fff;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+
+.setting-btn.active span:nth-of-type(1) {
+  top: 14px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.setting-btn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.setting-btn.active span:nth-of-type(3) {
+  top: 26px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+.setting-btn.active span:nth-of-type(3)::after {
+  content: "Close"; /*3つ目の要素のafterにClose表示を指定*/
+  transform: translateY(0) rotate(-45deg);
+  top: 5px;
+  left: 4px;
+}
