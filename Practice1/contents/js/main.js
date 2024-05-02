@@ -42,7 +42,9 @@ function submitAction(url) {
       // 以下ブラウザバッグ時に残らないように消去
       $("#form")[0].reset();
       $("#table-data").val("");
+      $(".setting-btn").addClass("first");
       $("#spinner").addClass("invisible");
+      inputData = "";
       window.location.href = url;
     }
   }, 1000);

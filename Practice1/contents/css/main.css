@@ -100,10 +100,10 @@ footer address {
   }
 }
 
-/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+/* ボタン外側 */
 .setting-btn {
   z-index: 1;
-  position: fixed; /*ボタン内側の基点となるためrelativeを指定*/
+  position: fixed; /* ボタン内側の基点となるためrelativeを指定 */
   right: 20px; /* 右端からの距離 */
   top: 20px; /* 画面の上端から中央に配置したい場合 */
   background: silver;
