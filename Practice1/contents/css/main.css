@@ -79,11 +79,11 @@ footer address {
 }
 
 /* 設定項目 */
-#settting {
+#setting {
   display: none;
 }
 
-.setting-btn.active + #settting {
+.setting-btn.active + #setting {
   position: fixed; /* 固定位置の指定 */
   display: block;
   right: 5px; /* 右端からの距離 */
