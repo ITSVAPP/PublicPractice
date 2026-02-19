@@ -42,7 +42,6 @@ flowchart LR
     M1["minwa-kappa.html"]
     M2["moguranoyomeiri.html"]
     M3["minwa-neko.html"]
-    Missing["index-2.html<br/>（現在ファイル欠損）"]
   end
 
   Top --> G
@@ -55,25 +54,21 @@ flowchart LR
   G --> O
   G --> T
   G --> K1
-  G --> Missing
 
   W --> G
   W --> O
   W --> T
   W --> K1
-  W --> Missing
 
   T --> G
   T --> W
   T --> O
   T --> K1
-  T --> Missing
 
   O --> G
   O --> W
   O --> T
   O --> K1
-  O --> Missing
   O --> M1
   O --> M2
   O --> M3
@@ -81,21 +76,17 @@ flowchart LR
   K1 --> KN
   K1 --> KC
   KN --> Y
-  KN --> Missing
 
   subgraph External["外部サイト"]
-    ExShop["hachiemon-netshop.raku-uru.jp"]
     ExBlog["raichimarry.blog41.fc2.com"]
     ExInsta["instagram.com/kadou_hachiemon"]
     ExAmeblo["ameblo.jp/soratokaitekutoyobu"]
     ExOrig["www8.plala.or.jp/hatiemon<br/>（本家URL）"]
   end
 
-  Top -.-> ExShop
   Top -.-> ExBlog
   Top -.-> ExInsta
   Top -.-> ExOrig
-  T -.-> ExShop
   T -.-> ExBlog
   G -.-> ExBlog
   O -.-> ExBlog
@@ -145,11 +136,9 @@ flowchart LR
 
 - `<!DOCTYPE>` 未定義ページ: 3ファイル
   - `Practice2/www8.plala.or.jp/hatiemon/index.html`
-  - `Practice2/www8.plala.or.jp/hatiemon/index-2.html`
   - `Practice2/www8.plala.or.jp/hatiemon/pc_arrow1.html`
 - `Content-Type` メタの重複: 2ファイル
   - `Practice2/www8.plala.or.jp/hatiemon/index.html`
-  - `Practice2/www8.plala.or.jp/hatiemon/index-2.html`
 - `http://` 外部リンクが複数（13件）
   - HTTPS化可能な先は切り替え検討余地あり
 
